@@ -139,8 +139,6 @@ output "copilot_private_ip" {
 
   Controller public IP. Default: "0.0.0.0".
 
-> **NOTE:** A valid **controller_public_ip** is required when **private_mode** is false.
-
 - **controller_private_ip**
 
   Controller private IP. Default "0.0.0.0".
