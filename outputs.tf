@@ -14,10 +14,6 @@ output "network_security_group_name" {
   value = azurerm_network_security_group.aviatrix_copilot_nsg.name
 }
 
-output "ssh_public_key" {
-  value = local.ssh_key
-}
-
 output "copilot_vm" {
   value = var.add_ssh_key ? azurerm_linux_virtual_machine.aviatrix_copilot_vm_ssh[0] : azurerm_linux_virtual_machine.aviatrix_copilot_vm[0]
 }

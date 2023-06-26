@@ -135,16 +135,6 @@ output "copilot_private_ip" {
 
   Map of additional disks that will be attached to the copilot vm. Please set managed_disk_id(string) and lun(string) in each map element. Please see the example code above for example.
 
-- **private_mode**
-
-  Flag to indicate whether the copilot is for private mode. Default: false.
-
-> **NOTE:** If **private_mode** is set to true, **use_existing_vpc** is required to be true. Please make sure the private subnet where the copilot instance will be launched has internet access. There will be no public IP for the copilot instance in private mode.
-
-- **is_cluster**
-
-  Flag to indicate whether the copilot is for cluster deployment. Default: false.
-
 - **controller_public_ip**
 
   Controller public IP. Default: "0.0.0.0".
@@ -153,7 +143,7 @@ output "copilot_private_ip" {
 
 - **controller_private_ip**
 
-  Controller private IP.
+  Controller private IP. Default "0.0.0.0".
 
 ### Outputs
 
@@ -168,3 +158,12 @@ output "copilot_private_ip" {
 - **resource_group_name**
 
   Resource group name.
+
+- **network_security_group_name**
+
+  NSG attached to CoPilot.
+
+- **copilot_vm**
+
+  Azure VM object.
+

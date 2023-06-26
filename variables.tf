@@ -126,18 +126,6 @@ variable "additional_disks" {
   }))
 }
 
-variable "private_mode" {
-  type        = bool
-  description = "Flag to indicate whether the copilot is for private mode"
-  default     = false
-}
-
-variable "is_cluster" {
-  type        = bool
-  description = "Flag to indicate whether the copilot is for a cluster"
-  default     = false
-}
-
 variable "controller_public_ip" {
   type        = string
   description = "Controller public IP"
