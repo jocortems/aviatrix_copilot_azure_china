@@ -21,7 +21,6 @@ resource "azurerm_subnet" "aviatrix_copilot_subnet" {
 }
 
 resource "azurerm_public_ip" "aviatrix_copilot_public_ip" {
-  count               = var.private_mode ? 0 : 1
   allocation_method   = "Static"
   location            = var.location
   name                = "${var.copilot_name}-public-ip"
