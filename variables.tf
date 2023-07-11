@@ -143,7 +143,7 @@ locals {
   controller_ip = var.controller_private_ip != "0.0.0.0" ? var.controller_private_ip : var.controller_public_ip
   custom_data = <<EOF
 #!/bin/bash
-jq '.config.controllerIp="${local.controller_ip}" | .config.controllerPublicIp="${local.controller_ip}" | .config.isCluster=${var.is_cluster}' /etc/copilot/db.json > /etc/copilot/db.json.tmp
+jq '.config.controllerIp="${local.controller_ip}" | .config.controllerPublicIp="${local.controller_ip}"' /etc/copilot/db.json > /etc/copilot/db.json.tmp
 mv /etc/copilot/db.json.tmp /etc/copilot/db.json
 EOF
 }
