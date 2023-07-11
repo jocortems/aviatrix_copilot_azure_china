@@ -57,7 +57,7 @@ resource "azurerm_network_interface" "aviatrix_copilot_nic" {
     name                          = "${var.copilot_name}-nic"
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = var.use_existing_vnet == false ? azurerm_subnet.aviatrix_copilot_subnet[0].id : var.subnet_id
-    public_ip_address_id          = var.private_mode ? "" : azurerm_public_ip.aviatrix_copilot_public_ip[0].id
+    public_ip_address_id          = azurerm_public_ip.aviatrix_copilot_public_ip[0].id
   }
 }
 
